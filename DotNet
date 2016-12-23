@@ -1,3 +1,0 @@
-git tag -a v1.0 -m "ProjetSmartCity"
-git commit
-git push origin 1.0
