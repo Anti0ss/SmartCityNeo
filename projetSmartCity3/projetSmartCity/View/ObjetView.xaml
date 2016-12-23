@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="projetSmartCity.ObjetView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:projetSmartCity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=ObjetView}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="30*"/>
+            
+        </Grid.RowDefinitions>
+       
+        <TextBlock Grid.Row="0" x:Name="Objet" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Objet" FontSize="40" TextWrapping="Wrap" Width="183" />
+        <TextBlock Grid.Row="1" x:Name="NomObjet"  Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Nom de l'objet : " VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="2" x:Name="NomObjetTexte" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" PlaceholderText="Nom" Text="{Binding NomObjet,Mode=TwoWay}" />
+        <TextBlock Grid.Row="3" x:Name="EtatObjet"  Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Etat de l'objet : " VerticalAlignment="Stretch"/>
+        <ComboBox Grid.Row="4" x:Name="EtatObjetBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding EtatList,Mode=TwoWay}" SelectedItem="{Binding EtatBox,Mode=TwoWay}"/>
+        <TextBlock Grid.Row="5" x:Name="Commentaire" Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Commentaire:" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="6" x:Name="CommentaireTexte" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" PlaceholderText="Commenter ici..." Text="{Binding Commentaire,Mode=TwoWay}"/>
+        <Button Grid.Row="7" x:Name="PosterObjet" Content="Suivant" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Stretch" Command="{Binding ValidationCommand}" />
+
+
+    </Grid>
+</Page>
+

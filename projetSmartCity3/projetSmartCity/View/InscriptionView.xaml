@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="projetSmartCity.InscriptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:projetSmartCity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=InscriptionView}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+      
+        <RelativePanel Grid.Row="0">
+            <Button Name="BackButton"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="{StaticResource SymbolThemeFontFamily}"
+                    Content="&#xE0C4;"
+                    FontSize="36"
+                    Command="{Binding GoToConnexionCommand}"/>
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="BackButton"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="20,5,0,0"/>
+
+        </RelativePanel>
+        <TextBlock Grid.Row="0" x:Name="InscriptionBlock" HorizontalAlignment="Center" FontSize="40" TextWrapping="Wrap" Foreground="Green" Text="Inscription" VerticalAlignment="Top" />
+        <TextBox Grid.Row="1" x:Name="NomText" HorizontalAlignment="Stretch"  FontSize="25" TextWrapping="Wrap" Foreground="Gray" PlaceholderText="Nom" Text="{Binding Nom,Mode=TwoWay}" VerticalAlignment="Stretch"  />
+        <TextBox Grid.Row="2"  x:Name="PrénomText" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray"  PlaceholderText="Prénom" Text="{Binding Prenom,Mode=TwoWay}" VerticalAlignment="Stretch" />
+        <TextBox Grid.Row="3" x:Name="EmailText" InputScope="EmailSmtpAddress" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray"  PlaceholderText="Votre adresse mail" Text="{Binding Adresse_mail,Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="4" x:Name="NumTelText" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray" PlaceholderText="Numéro de téléphone" Text="{Binding Numero_de_Telephone,Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBlock Grid.Row="5" x:Name="DateNaiss" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Foreground="Green" Text="Date de naissance :" VerticalAlignment="Stretch" />
+        <DatePicker Grid.Row="6" HorizontalAlignment="Right" Date="{Binding Date_de_Naissance, Mode=TwoWay}" VerticalAlignment="Stretch"   />
+        <TextBlock Grid.Row="7" x:Name="Adresse" HorizontalAlignment="Stretch" FontSize="30" TextWrapping="Wrap" Foreground="Green" Text="Adresse : " VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="8" x:Name="AdresseText" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray"  PlaceholderText="Votre rue" Text="{Binding Adr_Nom_de_Rue,Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="9" x:Name="NuméroText" HorizontalAlignment="Stretch"  FontSize="25" TextWrapping="Wrap" Foreground="Gray"  PlaceholderText="Votre numéro" Text="{Binding Adr_Numero_de_rue, Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="10" x:Name="LocaliteText" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray"  PlaceholderText="Votre ville" Text="{Binding Adr_Localite,Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="11" x:Name="CodePostalText" HorizontalAlignment="Stretch" FontSize="25" TextWrapping="Wrap" Foreground="Gray" PlaceholderText="Votre code postal" Text="{Binding Adr_Code_Postal,Mode=TwoWay}" VerticalAlignment="Stretch"/>
+        <TextBlock Grid.Row="12" x:Name="MDP" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Foreground="Green" Text="Mot de passe :" VerticalAlignment="Stretch" />
+        <PasswordBox Grid.Row="12" x:Name="MDPText" HorizontalAlignment="Right" VerticalAlignment="Stretch" Password="{Binding Password, Mode=TwoWay}" />
+        <TextBlock Grid.Row="13" x:Name="ConfirmationMDP" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Foreground="Green" Text="Confirmez le mot de passe :" VerticalAlignment="Stretch"/>
+        <PasswordBox Grid.Row="13" x:Name="ConfirmerMDPText" HorizontalAlignment="Right" VerticalAlignment="Stretch" Password="{Binding ConfirmPassword, Mode=TwoWay}" />
+
+        <Button Grid.Row="14" x:Name="button" Content="S'inscrire" HorizontalAlignment="Center" VerticalAlignment="Stretch" Foreground="Green" Command="{Binding GoToMainPageCommand}"/>
+    </Grid>
+</Page>

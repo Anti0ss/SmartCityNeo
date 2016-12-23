@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="projetSmartCity.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:projetSmartCity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainPage}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" x:Name="CompteButton" Content="Mon compte" HorizontalAlignment="Right" VerticalAlignment="Top" Background="White" Foreground="Green" Height="50" Command="{Binding GoToCompteCommand}"/>
+        <Button Grid.Row="1" x:Name="AnnonceButton" Content="Annonces" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Foreground="Green" FontSize="50" Command="{Binding GoToAnnonceCommand}"/>
+        <Button Grid.Row="2" x:Name="OffreButton" Content="Nouvelle offre" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="White" Foreground="Green" FontSize="50" Command="{Binding GoToNouvelleOffreCommand}"/>
+        <Button Grid.Row="3" x:Name="NouvelleDemandeButton" Content="Nouvelle Demande" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="White" Foreground="Green" FontSize="35" Command="{Binding GoToNouvelleDemandeCommand}"/>
+        <Button Grid.Row="4" x:Name="VoisinDemandeButton" Content="Demandes des voisins" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="White" Foreground="Green" FontSize="33" Command="{Binding GoToDemandeVoisinCommand}"/>
+        <Button Grid.Row="5" x:Name="ParametresButton" Content="Paramètres" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="Green" Height="50"/>
+
+    </Grid>
+</Page>

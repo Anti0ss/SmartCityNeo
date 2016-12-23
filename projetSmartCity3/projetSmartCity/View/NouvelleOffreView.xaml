@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="projetSmartCity.NouvelleOffreView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:projetSmartCity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=NouvelleOffreView}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <Button Name="BackButton"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="{StaticResource SymbolThemeFontFamily}"
+                    Content="&#xE0C4;"
+                    FontSize="36"
+                    Command="{Binding GoToMainPageCommand}"/>
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="BackButton"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="20,5,0,0"/>
+
+        </RelativePanel>
+        <TextBlock Grid.Row="0" x:Name="NouvelleOffre" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Nouvelle offre" FontSize="40" TextWrapping="Wrap" Width="183" />
+        <TextBlock Grid.Row="1" x:Name="NomOffre"  Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Nom de l'offre : " VerticalAlignment="Stretch"/>
+        <TextBox Grid.Row="2" x:Name="NomOffreTexte" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Text="{Binding Nom,Mode=TwoWay}"/>
+        <TextBlock Grid.Row="3" x:Name="Categorie" Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Catégorie : " VerticalAlignment="Stretch"/>
+        <ComboBox Grid.Row="3" x:Name="CategorieBox" HorizontalAlignment="Right" VerticalAlignment="Stretch" ItemsSource="{Binding CategorieList,Mode=TwoWay}" SelectedItem="{Binding Categorie,Mode=TwoWay}" DisplayMemberPath="Libelle"/>
+        <TextBlock Grid.Row="4" x:Name="Disponibilité" Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Dates De Disponibilités" VerticalAlignment="Stretch"/>
+        <RelativePanel Grid.Row="5">
+            <TextBlock x:Name="du" Text="du" Foreground="Green" Margin="0,0,25,0" />
+            <CalendarDatePicker x:Name="dateDebut" RelativePanel.RightOf="du" Margin="0,0,25,0" Date="{Binding Date_de_debut,Mode=TwoWay}"/>
+            <TextBlock x:Name="au" Text="au" RelativePanel.RightOf="dateDebut" Foreground="Green" Margin="0,0,25,0"/>
+            <CalendarDatePicker x:Name="DateFin" RelativePanel.RightOf="au" Date="{Binding Date_de_fin,Mode=TwoWay}" />
+        </RelativePanel>
+        <TextBlock Grid.Row="6" x:Name="Description" Foreground="Green" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="Description : " VerticalAlignment="Stretch" />
+        <TextBox Grid.Row="7" x:Name="DescriptionText" HorizontalAlignment="Stretch" TextWrapping="Wrap" PlaceholderText="Description de l'offre..." VerticalAlignment="Stretch" Text="{Binding Description,Mode=TwoWay}"/>
+        <Button Grid.Row="8" x:Name="posterDemande" Content="Suivant" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Stretch" Command="{Binding GoToObjetCommand}" />
+        
+
+    </Grid>
+</Page>

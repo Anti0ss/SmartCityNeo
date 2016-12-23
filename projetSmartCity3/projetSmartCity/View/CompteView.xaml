@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="projetSmartCity.CompteView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:projetSmartCity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=CompteView}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        
+        <RelativePanel Grid.Row="0">
+            <Button Name="BackButton"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="{StaticResource SymbolThemeFontFamily}"
+                    Content="&#xE0C4;"
+                    FontSize="36"
+                    Command="{Binding GoToMainPageCommand}"/>
+            <TextBlock Name="TitleTextBlock"
+                       RelativePanel.RightOf="BackButton"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="20,5,0,0"/>
+
+        </RelativePanel>
+
+        <TextBlock Grid.Row="0" x:Name="MonCompte" HorizontalAlignment="Center" FontSize="40" TextWrapping="Wrap" Text="Mon Compte" VerticalAlignment="Stretch"  Foreground="Green" />
+        <TextBlock Grid.Row="1" x:Name="Nom" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Nom : " VerticalAlignment="Stretch" Foreground="Green"/>
+        <TextBox Grid.Row="1" x:Name="NomText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34" Text="{Binding Nom, Mode=TwoWay}"   />
+        <TextBlock Grid.Row="2" x:Name="Prénom" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Prénom :" VerticalAlignment="Stretch"  Foreground="Green"/>
+        <TextBox Grid.Row="2" x:Name="PrénomText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34" Text="{Binding Prenom, Mode=TwoWay}" />
+        <TextBlock Grid.Row="3" x:Name="DateNaiss" HorizontalAlignment="Left"  FontSize="25" TextWrapping="Wrap" Text="Date de naissance :" VerticalAlignment="Stretch" Foreground="Green"/>
+        <DatePicker Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="340" Height="33" Date="{Binding Date_de_Naissance, Mode=TwoWay}" />
+        <TextBlock Grid.Row="4" x:Name="AdresseRue" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Adresse Rue : " VerticalAlignment="Stretch" Foreground="Green"/>
+        <TextBox Grid.Row="4" x:Name="AdresseText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34" Text="{Binding Adr_Nom_de_Rue, Mode=TwoWay}" />
+        <TextBlock Grid.Row="5" x:Name="NuméroBoite" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Numéro :" VerticalAlignment="Stretch" Foreground="Green"/>
+        <TextBox Grid.Row="5" x:Name="NuméroText" HorizontalAlignment="Right"  TextWrapping="Wrap"  VerticalAlignment="top" Height="34" Text="{Binding Adr_Numero_de_rue, Mode=TwoWay }"/>
+        <TextBlock Grid.Row="6" x:Name="Localite" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Localité : " VerticalAlignment="Stretch" Foreground="Green"/>
+        <TextBox Grid.Row="6" x:Name="LocaliteText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34"  Text="{Binding Adr_Localite, Mode=TwoWay}"/>
+        <TextBlock Grid.Row="7" x:Name="CodePostal" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Code Postal :" VerticalAlignment="Stretch"  Foreground="Green"/>
+        <TextBox Grid.Row="7" x:Name="CodePostalText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34" Text="{Binding Adr_Code_Postal, Mode=TwoWay}" />
+        <TextBlock Grid.Row="8" x:Name="Email" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Email : " VerticalAlignment="Stretch"  Foreground="Green"/>
+        <TextBox Grid.Row="8" x:Name="EmailText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top"  Height="34" Text="{Binding Adresse_mail, Mode=TwoWay}"/>
+        <TextBlock Grid.Row="9" x:Name="NumTel" HorizontalAlignment="Left" FontSize="25" TextWrapping="Wrap" Text="Numéro de téléphone : " VerticalAlignment="Stretch" Foreground="Green"/>
+        <TextBox Grid.Row="9" x:Name="NumTelText" HorizontalAlignment="Right" TextWrapping="Wrap"  VerticalAlignment="Top" Height="34" Text="{Binding Numero_de_Telephone, Mode=TwoWay}" />
+        <Button Grid.Row="9"  x:Name="Modification" Content="Modifier le compte" HorizontalAlignment="Right"  VerticalAlignment="Stretch" Margin="0,56,0,0" Grid.RowSpan="2" Width="164"/>
+        <Button Grid.Row="9"  x:Name="Suppression" Content="Supprimer son compte" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Margin="0,56,0,0" Grid.RowSpan="2" Width="176"/>
+
+    </Grid>
+</Page>
